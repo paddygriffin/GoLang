@@ -1,8 +1,7 @@
 package main
 
 import (
-	//"bufio"
-	//"os"
+	
 	"fmt"
 )
 /*
@@ -18,22 +17,22 @@ import (
 
 
 func main() {
-	//var evenNum int
-	var num int
-	var newnum int
+
+	var num int = 0
 
 	fmt.Print("Enter num: ")
 	fmt.Scanln(&num)
 
+	for num  != 1 {
 	//finds if num is even or odd and does the math
 	if (num  % 2)==0{
-		newnum = num / 2
-		fmt.Print(newnum)
+		num = num / 2
+		fmt.Println(num)
 	}else{
-		newnum = (num * 3) + 1
-		fmt.Print(newnum)
+		num = (num * 3) + 1
+		fmt.Println(num)
 	}
-
+	}
 
 
 }
