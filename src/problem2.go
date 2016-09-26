@@ -39,36 +39,38 @@ func main() {
 
 	//print out the amount of prime numbers*/
 
-//	var i int //loop 1
-	var j int // loop 2
-	var primeNumCount int //counting the prime
+	var primeNumber int // Store the 10000th Prime Number
+	var count int // Counter
+	var i int =1
+	var z int
+	var check bool = true
 
-	for i := 1; i < 10001; i++{
-		i++ //increment
-		//checking
-		if(i%1==0)&&(i%i==0){
-			if i==2{
-				primeNumCount++
-			}else{
-				for j =2;j<i;j++{
-					if i % j ==0{
-						break
-					}else if j == i-1 {
-						primeNumCount++
-						if primeNumCount == 1001{
-							primeNumCount = i
+	for check{ // this is like a while loop using a bool so the check = false will exit the loop when called upon
+		i++
+		primeNumber=i
+
+		if (i % i == 0) && (i % 1 == 0){ // check for Prime Number divide by itself and 1
+			if i == 2 { // 2 is a prime number so add it
+				count++
+			} else { // Continue
+				for z = 2; z < i; z++ {
+					if i % z == 0{// If it is divisible then its not a Prime Number
+						break // Try the next number
+					} else if z == i-1  { //If its not divisible then its a Prime Number
+						count++ //Add 1 to the count
+						if count == 10001 {
+							check = false//Exit the for loop as count is = to 10001
 						}
-					}else {
+					} else {
 						continue
 					}
 				}
 			}
+		}
+	}
+	fmt.Print("The 10001st prime number is: ", primeNumber)// Print the 1000th Prime Number
 
 
-		}//if
-
-	}//for
-	fmt.Println("the number:", primeNumCount)
 }
 
 
